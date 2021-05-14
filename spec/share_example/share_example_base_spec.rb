@@ -1,3 +1,5 @@
+require "set"
+
 # Before use Share examples
 # RSpec.describe Array do
 #   let(:something1) { "parameter1" }
@@ -21,6 +23,16 @@ RSpec.shared_examples "some example" do |parameter|
 end
 
 RSpec.describe Array do
+  it_behaves_like "some example", "parameter1"
+  it_behaves_like "some example", "parameter2"
+end
+
+RSpec.describe Set do
+  it_behaves_like "some example", "parameter1"
+  it_behaves_like "some example", "parameter2"
+end
+
+RSpec.describe Hash do
   it_behaves_like "some example", "parameter1"
   it_behaves_like "some example", "parameter2"
 end
