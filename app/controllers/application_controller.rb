@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include MicropostsHelper
   def logged_in_user
     return if logged_in?
 
